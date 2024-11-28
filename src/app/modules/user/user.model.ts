@@ -17,11 +17,12 @@ const userSchema = new Schema<TUser>(
     },
     role: {
       type: String,
-      enum: ["admin", "student", "faculty"],
+      enum: ["student", "faculty", "admin"],
     },
     status: {
       type: String,
       enum: ["in-progress", "blocked"],
+      default: "in-progress",
     },
     isDeleted: {
       type: Boolean,
@@ -33,4 +34,4 @@ const userSchema = new Schema<TUser>(
   }
 );
 
-export const userModel = model<TUser>("Users", userSchema);
+export const User = model<TUser>("Users", userSchema);
